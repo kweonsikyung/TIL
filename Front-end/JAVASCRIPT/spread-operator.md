@@ -57,4 +57,12 @@ console.log(obj1 == clonedObj1) //false : 프로퍼티만 복사받은 객체이
 const mergedObj = {...obj1, ...obj2};
 console.log(mergedObj);
 ```
-이러한 스프레드 연산자의 성질은 <b>상태의 불변성 유지</b>에도 유용하다
+이러한 스프레드 연산자의 성질은 <b>상태의 불변성 유지</b>에도 유용하다.
+### 기존의 메모리에 담겨 있던 값이 다시 변경되지 않으며, 이 불변성을 유지함으로서 상태변화를 빠르게 탐지할 수 있다.
+```js
+const obj1 = {name : 'John', age : '20', flag : 'true', foo: 'bar'};
+const newObj1 = { ...obj1, name: 'Alice'}; //복사받은 값에서 뒤에 적은 name값만 변경(덮어씌우는)효과를 갖게 된다
+
+console.log(newObj1);
+console.log(obj1 === newObj1); //false : 서로 다른 객체임
+```

@@ -11,7 +11,7 @@ const numbers2 = numbers1.map(val => val*2);
 console.log(numbers2)
 ```
 
-+ map의 full version </br>
++) map의 full version </br>
 사실 map 메소드의 매개변수는 value 하나만 들어가는게 아니라 value, index, array가 들어간다. </br>
     -value : 배열의 원소 </br>
     -index : 해당 원소의 인덱스 </br>
@@ -60,7 +60,7 @@ const numberFilter = numberArray.filter(val => val.length > 3);
 console.log(numberFilter)
 ```
 
-+ filter의 full version </br>
++) filter의 full version </br>
 사실 filter 메소드의 매개변수는 value 하나만 들어가는게 아니라 value, index, array가 들어간다. </br> 의미하는 바는 map과 동일하다
 ```js
 const numberArray = ['one', 'two', 'three', 'four', 'five']

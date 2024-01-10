@@ -5,10 +5,8 @@ import Parser from "rss-parser";
  * README.MD
  */
  
-let text = `# Hi there 👋
-
-## 📕 Blog Posts
-
+let text = `Today I Learned..🔥👩🏻‍💻🌈🧩🎁
+### 📕 Blog Posts
 `;
 
 // rss-parser 생성
@@ -19,17 +17,15 @@ const parser = new Parser({
 
 (async () => {
 
-    const feed = await parser.parseURL('https://systorage.tistory.com/rss');
+    const feed = await parser.parseURL('https://sikyung.tistory.com/rss');
 
     for (let i = 0; i < 50; i++) {
-        const {category, title, link} = feed.items[i];
-        console.log(category, title, link);
-        text += `<a href=${link}>[${category}]${title}</a></br>`;
+        const {title, link} = feed.items[i];
+        text += `<a href=${link}>${title}</a></br>`;
     }
 
     writeFileSync('README.md', text, 'utf8', (e) => {
         console.log(e)
     })
 
-    console.log('업데이트 완료')
 })();

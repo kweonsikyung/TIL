@@ -22,7 +22,8 @@ const parser = new Parser({
     const feed = await parser.parseURL('https://systorage.tistory.com/rss');
 
     for (let i = 0; i < 50; i++) {
-        const {title, link} = feed.items[i];
+        const {category, title, link} = feed.items[i];
+        console.log(category, title, link);
         text += `<a href=${link}>[${category}]${title}</a></br>`;
     }
 
